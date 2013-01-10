@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface pigPenViewController : UIViewController
+@interface pigPenViewController : UIViewController {
+    NSMutableArray *_pigs;
+    NSTimer *animationTimer;
+}
 
 @end

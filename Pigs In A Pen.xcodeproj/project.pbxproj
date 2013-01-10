@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0FA706169E3CCE008A861D /* pig.png in Resources */ = {isa = PBXBuildFile; fileRef = BB0FA702169E3CCE008A861D /* pig.png */; };
+		BB0FA707169E3CCE008A861D /* pig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB0FA703169E3CCE008A861D /* pig@2x.png */; };
+		BB0FA708169E3CCE008A861D /* pig-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BB0FA704169E3CCE008A861D /* pig-72.png */; };
+		BB0FA709169E3CCE008A861D /* pig-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB0FA705169E3CCE008A861D /* pig-72@2x.png */; };
 		BB4BB726169E2DED00CF825E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4BB725169E2DED00CF825E /* UIKit.framework */; };
 		BB4BB728169E2DED00CF825E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4BB727169E2DED00CF825E /* Foundation.framework */; };
 		BB4BB72A169E2DED00CF825E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4BB729169E2DED00CF825E /* CoreGraphics.framework */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB0FA702169E3CCE008A861D /* pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pig.png; sourceTree = "<group>"; };
+		BB0FA703169E3CCE008A861D /* pig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pig@2x.png"; sourceTree = "<group>"; };
+		BB0FA704169E3CCE008A861D /* pig-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pig-72.png"; sourceTree = "<group>"; };
+		BB0FA705169E3CCE008A861D /* pig-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pig-72@2x.png"; sourceTree = "<group>"; };
 		BB4BB721169E2DED00CF825E /* Pigs In A Pen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pigs In A Pen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4BB725169E2DED00CF825E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BB4BB727169E2DED00CF825E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +141,10 @@
 		BB4BB72C169E2DED00CF825E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB0FA702169E3CCE008A861D /* pig.png */,
+				BB0FA703169E3CCE008A861D /* pig@2x.png */,
+				BB0FA704169E3CCE008A861D /* pig-72.png */,
+				BB0FA705169E3CCE008A861D /* pig-72@2x.png */,
 				BB4BB72D169E2DED00CF825E /* Pigs In A Pen-Info.plist */,
 				BB4BB72E169E2DED00CF825E /* InfoPlist.strings */,
 				BB4BB731169E2DED00CF825E /* main.m */,
@@ -241,6 +253,10 @@
 				BB4BB73C169E2DED00CF825E /* Default-568h@2x.png in Resources */,
 				BB4BB73F169E2DED00CF825E /* MainStoryboard_iPhone.storyboard in Resources */,
 				BB4BB742169E2DED00CF825E /* MainStoryboard_iPad.storyboard in Resources */,
+				BB0FA706169E3CCE008A861D /* pig.png in Resources */,
+				BB0FA707169E3CCE008A861D /* pig@2x.png in Resources */,
+				BB0FA708169E3CCE008A861D /* pig-72.png in Resources */,
+				BB0FA709169E3CCE008A861D /* pig-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +478,7 @@
 				BB4BB75F169E2DED00CF825E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB4BB760169E2DED00CF825E /* Build configuration list for PBXNativeTarget "Pigs In A PenTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +487,7 @@
 				BB4BB762169E2DED00CF825E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
