@@ -71,7 +71,7 @@
     NSLog(@"New pig %i at x:%i y:%i",pigImageView.tag,randomX,randomY);
 }
 
--(BOOL)pigsCollideWithPigTag:(int)pigTag withMove:(CGRect) pigMove
+-(BOOL)pigsCollideWithPigTag:(int)pigTag inSpot:(CGRect) pigMove
 // Returns TRUE if collisions between pig and other pigs, FALSE otherwise
 {
     for (UIImageView *otherPig in _pigs) {
@@ -86,16 +86,16 @@
 -(BOOL)pigEscape:(CGRect) pigMove fromPen:(UIView *)pen
 // Returns TRUE if pig collides with edge of pen, FALSE otherwise
 {
-    if(pigMove.origin.x < pen.frame.origin.x) {
+    if(pigMove.origin.x < pen.bounds.origin.x) {
         NSLog(@"pig escape to the left");
         return TRUE;
-    } else if((pigMove.origin.x + pigMove.size.width) > (pen.frame.origin.x + pen.frame.size.width)) {
+    } else if((pigMove.origin.x + pigMove.size.width) > (pen.bounds.origin.x  + pen.bounds.size.width)) {
         NSLog(@"pig escape to the right");
         return TRUE;
-    } else if(pigMove.origin.y < pen.frame.origin.y) {
+    } else if(pigMove.origin.y < pen.bounds.origin.y) {
         NSLog(@"pig escape up");
         return TRUE;
-    } else if((pigMove.origin.y + pigMove.size.height) > (pen.frame.origin.y + pen.frame.size.height)) {
+    } else if((pigMove.origin.y + pigMove.size.height) > (pen.bounds.origin.y + pen.bounds.size.height)) {
         NSLog(@"pig escape to the down");
         return TRUE;
     } else {
@@ -113,7 +113,7 @@
     int randomY = (arc4random() % rangeY) - height + pig.frame.origin.y;
     CGRect newPigRect = CGRectMake(randomX,randomY,width,height);
     // check that move is not collision
-    while ([self pigsCollideWithPigTag:pig.tag withMove:newPigRect] || [self pigEscape:newPigRect fromPen:self.view]){
+    while ([self pigsCollideWithPigTag:pig.tag inSpot:newPigRect] || [self pigEscape:newPigRect fromPen:self.view]){
         randomX = (arc4random() % rangeX) - width + pig.frame.origin.x;
         randomY = (arc4random() % rangeY) - height + pig.frame.origin.y;
         newPigRect = CGRectMake(randomX,randomY,width,height);
