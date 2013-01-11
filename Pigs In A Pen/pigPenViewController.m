@@ -68,7 +68,7 @@
     // Add Image View to View Controller
     [self.view addSubview:pigImageView];
     [_pigs addObject:pigImageView];
-    NSLog(@"New pig %i at x:%i y:%i",pigImageView.tag,randomX,randomY);
+    NSLog(@"New pig %i at x:%i y:%i",pigImageView.tag,pigImageView.frame.origin.x, pigImageView.frame.origin.y);
 }
 
 -(BOOL)pigsCollideWithPigTag:(int)pigTag inSpot:(CGRect) pigMove
@@ -105,6 +105,7 @@
 
 - (void)movePig:(UIImageView *)pig
 {  // Set size and position
+    int count = 0;
     float width = pig.frame.size.width;
     float height = pig.frame.size.height;
     int rangeX = width * 2;
@@ -113,13 +114,16 @@
     int randomY = (arc4random() % rangeY) - height + pig.frame.origin.y;
     CGRect newPigRect = CGRectMake(randomX,randomY,width,height);
     // check that move is not collision
-    while ([self pigsCollideWithPigTag:pig.tag inSpot:newPigRect] || [self pigEscape:newPigRect fromPen:self.view]){
+    while (([self pigsCollideWithPigTag:pig.tag inSpot:newPigRect] || [self pigEscape:newPigRect fromPen:self.view]) && count < 3){
         randomX = (arc4random() % rangeX) - width + pig.frame.origin.x;
         randomY = (arc4random() % rangeY) - height + pig.frame.origin.y;
         newPigRect = CGRectMake(randomX,randomY,width,height);
-        //NSLog(@"stuck in while loop");
+        count++;
+        NSLog(@"count %i", count);
     }
-    [pig setFrame:newPigRect];
+    if (count < 3) {
+        [pig setFrame:newPigRect];
+    }
 }
 
 - (void)movePigs
